@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 data-level="Rookie" id="player"></h1>
+    <!--GOING FURTHER: <h1 data-level=0 id="player"></h1>-->
+    <button id="levelUp">Level up</button>
+
+    
+</body>
+<script>
+    const player = document.getElementById("player");
+    const levelUp = document.getElementById("levelUp");
+    const levels = ["Rookie", "Warrior", "Senior Soldier", "Mage", "Demon King"];
+    let level = player.dataset.level;
+    setPlayerLevel();
+    
+
+    window.onload = function () {
+        levelUp.addEventListener("click", () => { levelUpPlayer(); });
+    }
+
+    function setPlayerLevel(){
+        player.innerHTML = `Player Level: ${level}`;
+    };
+
+    function levelUpPlayer(){
+        level = "Warrior";
+        setPlayerLevel();
+    }
+
+    /*
+    //GOING FURTHER
+
+    function setPlayerLevel() {
+        player.innerHTML = `Player Level: ${levels[level]}`;
+    };
+
+    function levelUpPlayer() {
+        if (level < levels.length-1) {
+            level++;
+            setPlayerLevel();
+            console.log(level);
+        }
+        else{
+            player.innerHTML = "You've reached the highest level";
+        }
+    }*/
+
+
+</script>
+
+</html>
